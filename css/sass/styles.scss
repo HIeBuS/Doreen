@@ -1,0 +1,720 @@
+// mobile devices
+@media screen and (max-width:576px) {
+    //index site ///////////////////////////////////////////////////////////
+
+    // header
+    .header-helpers {
+        @include not-display;
+    }
+    
+    // main content
+    .main-headings {
+        h1, .mainImgP {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .main-content-img {
+        @include not-display;
+    }
+
+    .opinions {
+        @include not-display;
+    }
+
+    // about us
+    .about-us-img {
+        @include not-display;
+    }
+
+    // contact data
+    .contact_tile {
+       padding: 3vh 0; 
+    }
+
+    .tile_opening_hours {
+        border-right: 1px solid $alternate-background-color!important;
+        border-left: 1px solid $alternate-background-color!important;
+        @include border-top(1px,solid,$bright-text-color);
+        @include border-bottom(1px,solid,$bright-text-color);
+    }
+
+    // contact
+    .contact {
+        height: 840px;
+        text-align: center;
+        h3 {
+            @include center-text;
+            margin-top: 4vh;
+        }
+
+        #name,#message,#btn {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #name {
+            font-size: x-small;
+            margin-top: 2vh;
+        }
+
+        #btn {
+            margin-bottom: 8vh;
+        }
+        
+        .map-link {
+            width: 490px;
+            height: 372px;
+            margin: 10px;
+            margin-top: -10px;
+        }
+    }
+
+    //footer
+    .footer-info {
+        margin-top: 46.5vh;
+
+        .footer-tile {
+            border-right: none;
+            @include border-bottom(1px, solid, $basic-border-color);
+        }
+
+        .footer_contact_data {
+            border: 0;
+        }
+    }
+
+    .footer_rights_bar {
+        position: absolute;
+        top: 406vh;
+        width: 100%;
+    }
+
+    //about us site///////////////////////////////////////////////////////////
+
+    //boast-tiles
+    .boast-tile {
+        border: none!important;
+    }
+    
+    .about_us_boast_tiles {
+        height: 110vh!important;
+    }
+
+    // about_us_boast_tiles
+    .about-boast-tile {
+        height: 40vh!important;
+        padding: 4vh 0!important;
+        width: 86vw!important;
+    }
+
+    .about-us-footer-rights-bar {
+        position: absolute;
+        top: 440vh;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//index website
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 2vh 0;
+    @include border-bottom(1px, solid, $basic-border-color);
+
+    .navbar-brand {
+        transition: filter 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(1.75);
+        }
+    }
+
+    .nav-link, .header-helpers-text, .header-helpers-ico {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: contrast(50%);
+        }
+    }
+}
+
+// main content
+.main_content {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: relative;
+    .main-headings {
+        margin-top: 40vh;
+        @include float-left;
+        h1 {
+            @include heading_mixin(3.6rem,$header-text-color);
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px $primary-accent-color;
+        }
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 1vh;
+        }
+        p {
+            @include heading_mixin(1.8rem,$primary-accent-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 4vh;
+            margin-left: 1vh;
+            text-shadow: 
+                1px 1px 2px $basic-text-color,
+                -1px 1px 2px $basic-text-color,
+                -1px -1px 2px $basic-text-color,
+                1px -1px 2px $basic-text-color;
+        }
+        button {
+            background: transparent;
+            @include center-text;
+            @include border(2px, solid, $primary-accent-color);
+            outline: 1px solid $header-text-color;
+            @include border-radius(4px);
+            @include size(230px, 60px);
+            margin-top: 3vh;
+            @include heading_mixin(1rem, $header-text-color);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px $primary-accent-color;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                filter: opacity(0.7);
+            }
+        }
+    }
+
+    img {
+        @include border-radius(100%);
+        margin-top: 24vh;
+    }
+}
+  
+.main_content::after {
+    content: "";
+    //Image by 💚🌺💚Nowaja💚🌺💚 from Pixabay 
+    background: url('../../img/pink_flowers.jpg');
+    background-size: cover;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    filter: blur(2px);
+}
+
+.main-content-img {
+    -webkit-box-shadow: 0px 0px 80px 30px rgb(240, 179, 237);
+    -moz-box-shadow: 0px 0px 80px 30px rgb(240, 179, 237);
+    box-shadow: 0px 0px 80px 30px rgb(240, 179, 237);   
+}
+
+// opinions 
+.opinions {
+    width: 100%;
+    height: 25vh;
+    overflow: hidden;
+    place-items: center;
+    // background image from subtle patterns
+    background-image: url('../../img/pink_rice.png');
+    @include border-top(1px,solid,$basic-border-color);
+    @include border-bottom(1px,solid,$basic-border-color);
+}
+
+.wrapper {
+    box-sizing: content-box;
+    background-color: transparent;
+    height: 70%;
+    padding: 50px 30px;
+    display: flex;
+}
+
+.opinion {
+    display: block;
+    height: 100%;
+    animation: spin-words 16s infinite;
+    margin-top: 0.5vh;
+
+    font-size: 1.3rem;
+
+    h3 {
+        margin-top: 4px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+@keyframes spin-words{
+    0% {
+        transform: translateY(-100%);
+    }
+    25% {
+        transform: translateY(-200%);
+    }
+    50% {
+        transform: translateY(-300%);
+    }
+    75% {
+        transform: translateY(-400%);
+    }
+    100% {
+        transform: translateY(-500%);
+    }
+}
+
+// about us
+.about_us {
+    height: 60vh;
+    padding: 50px 0;
+    @include border-bottom(1px,solid,$basic-border-color);
+    h3 {
+        position: relative;
+        top: 20%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.8;
+        $color: $secondary-accent-color;
+    }
+
+    h2 {
+        position: relative;
+        top: 28%;
+        font-size: 1.4rem;
+        margin: 0 2vw;
+        line-height: 1.5;
+    }
+
+    .about-us-button {
+        position: relative;
+        top: 36%;
+        background: transparent;
+        @include center-text;
+        @include border(2px, solid, $primary-accent-color);
+        @include border-radius(4px);
+        @include size(160px, 44px);
+        @include heading_mixin(1rem, $header-text-color);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.8;
+        $color: $secondary-accent-color;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: opacity(0.7);
+        }
+    }
+
+    img {
+        @include border-radius(36px);
+        -webkit-box-shadow: 8px 8px 24px 0px $secondary-accent-color;
+        -moz-box-shadow: 8px 8px 24px 0px $secondary-accent-color;
+        box-shadow: 8px 8px 24px 0px $secondary-accent-color;
+    }
+}
+
+// contact data
+.contact {
+    height: 480px;
+    padding: 20px 0px;
+    line-height: 1.4;
+    h3 {
+        position: relative;
+        top: 20%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.8;
+        $color: $secondary-accent-color;
+        font-size: xx-large;
+        margin-bottom: 4px;
+    }
+
+    input[type=text] {
+        margin: 4px 0px;
+    }
+
+    input[type=submit] {
+        position: relative;
+        top: 36%;
+        background: transparent;
+        @include center-text;
+        @include border(2px, solid, $primary-accent-color);
+        @include border-radius(4px);
+        @include size(160px, 44px);
+        @include heading_mixin(1rem, $header-text-color);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.8;
+        $color: $secondary-accent-color;
+    }
+
+    .contact_form {
+        @include center-vertical;
+        margin-top: -12px;
+        form {
+            #name {
+                width: 20vw;
+                height: 6vh;
+                @include border-radius(4px);
+            }
+
+            #message {
+                width: 36vw;
+                height: 20vh;
+                @include border-radius(4px);
+            }  
+        }
+    }
+}
+
+.contact-button {
+    transition: all 0.3s ease-in-out;
+
+            &:hover {
+                filter: opacity(0.7);
+            }
+}
+
+.contact_data {
+    @include border-bottom(1px,solid,$basic-border-color);
+    padding: 3vh 0;
+    line-height: 1.4;
+    background-color: $alternate-background-color;
+    color: $bright-text-color;
+}
+
+.contact_tile {
+    @include center-vertical;
+    h3 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size: 0.7rem;
+    }
+}
+
+.tile_opening_hours {
+    @include border-right(1px,solid,$bright-text-color);
+    @include border-left(1px,solid,$bright-text-color);
+}
+
+// footer
+footer {
+    .footer-info {
+        background-color: $footer-color;
+        height: 25vh;
+        padding: 2vh 0;
+        @include border-top(1px, solid, $basic-border-color);
+    }
+
+    .footer_rights_bar {
+        background-color: darken($footer-color,4%);
+        @include border-top(1px, dashed, $primary-accent-color);
+        padding: 1vh 0;
+        font-size: 1em;
+        line-height: 3;
+        margin-top: -2vh;
+        
+    }
+
+    h3 {
+        font-size:larger;
+        font-weight: 600;
+        $color: $secondary-accent-color;
+        letter-spacing: 1px;
+    }
+
+    li {
+        margin: 2vh 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: lighten($secondary-accent-color,20%);
+    }
+
+    li > a:hover {
+        color: hsl(3, 0%, 30%)
+    }
+
+    .footer-tile {
+        margin-top: 2vh;
+    }
+
+    .footer_social_media {
+        i {
+            margin-top: 2vh;
+        }
+        i:hover {
+            color: #3b5998;
+            cursor: pointer;
+        }
+    }
+
+    .footer-tile{
+        @include border-right(1px,solid,$basic-border-color);
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// about us website
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.about-us-main-content:after {
+    content: "";
+    //Image by s.salvador on Freepik
+    background: url('../../img/about-us-bg.jpg');
+    background-size: cover;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    filter: blur(1px);
+}
+
+.about-us-main-content-img {
+    -webkit-box-shadow: 0px 0px 80px 30px rgb(145, 185, 222);
+    -moz-box-shadow: 0px 0px 80px 30px rgb(145, 185, 222);
+    box-shadow: 0px 0px 80px 30px rgb(145, 185, 222);
+}
+
+//boast-tile
+.about_us_boast_data {
+    background-color: $alternate-background-color;
+    color: $bright-text-color;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .boast-tile {
+        padding: 5vh 0; 
+    }
+
+    .salon-tile {
+        @include border-right(1px,solid,$bright-text-color);
+        border-color: $bright-text-color;
+    }
+
+    .treatment-tile {
+        @include border-right(1px,solid,$bright-text-color);
+        border-color: $bright-text-color;
+    }
+
+    .satisfaction-tile {
+        @include border-right(1px,solid,$bright-text-color);
+        border-color: $bright-text-color;
+    }
+
+    h1 {
+        font-size: 3.6em;
+        margin-bottom: 2vh;
+    }
+
+    h4 {
+        letter-spacing: 2px;
+    }
+    
+}
+
+//about_us_boast_tiles
+.about_us_boast_tiles {
+    background-color: $basic-background-color;
+    text-align: center;
+    height: 60vh;
+
+    .about-boast-tile {
+        background-image: url('../../img/geometric-leaves.png');
+        color: lighten($secondary-accent-color,20%);
+        height: 40vh;
+        margin: 6vh 0 6vh;
+        margin-left: auto;
+        margin-right: auto;
+        @include border(1px, solid, $basic-border-color);
+        font-size: 1.8em;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 4vh 0;
+
+        text-shadow: 2px 2px 3px $alternate-border-color;
+
+        -webkit-box-shadow: 8px 8px 41px -6px rgba(96, 92, 116, 1);
+        -moz-box-shadow: 8px 8px 41px -6px rgba(96, 92, 116, 1);
+        box-shadow: 8px 8px 41px -6px rgba(96, 92, 116, 1);
+
+        @include various-transiton(all,0.5s,ease-out);
+
+        &:hover {
+           transform: rotate(10deg);
+        }
+    }
+
+    .location-boast-tile {
+        height: 48vh;
+        padding: 8vh 0;
+    }
+
+    i {
+        font-size: 3em;
+        margin: 2vh 0;
+    }
+
+    h3 {
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+} 
+
+footer {
+    .about-us-footer-info {
+        background-color: $secondary-footer-color;
+    }
+
+    .about-us-footer-rights-bar {
+        background-color: darken($secondary-footer-color,4%);
+    }
+
+    .about_us_footer_data {
+        background-color: $secondary-footer-color;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// offer website
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.offer-main-content::after {
+    content: "";
+    background: url('../../img/offer-bg.jpg');
+    background-size: cover;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    filter: blur(1px);
+}
+
+.offer-main-content-img {
+    -webkit-box-shadow: 0px 0px 80px 30px rgb(219, 235, 157);
+    -moz-box-shadow: 0px 0px 80px 30px rgb(219, 235, 157);
+    box-shadow: 0px 0px 80px 30px rgb(219, 235, 157);
+}
+
+//offer tile
+
+.offer {
+    height: 60vh;
+    padding: 50px 0;
+    @include border-bottom(1px,solid,$basic-border-color);
+    h2 {
+        position: relative;
+        top: 5%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 2rem;
+        font-weight: bold;
+        opacity: 0.8;
+        $color: $secondary-accent-color;
+        text-shadow: 1px 1px 3px $third-accent-color;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+
+    h3 > ul > li {
+        position: relative;
+        top: 50px;
+        font-size: 1.4rem;
+        margin: 0 2vw;
+        line-height: 1.4;
+        text-shadow: 1px 1px 3px $primary-accent-color;
+        list-style-image: url('../../img/flower-icon.png');
+        vertical-align: middle
+    }
+
+    img {
+        @include border-radius(36px);
+        -webkit-box-shadow: 8px 8px 24px 0px $third-accent-color;
+        -moz-box-shadow: 8px 8px 24px 0px $third-accent-color;
+        box-shadow: 8px 8px 24px 0px $third-accent-color;
+    }
+}
+
+footer {
+    .offer-footer-info {
+        background-color: $third-footer-color;
+    }
+
+    .offer-footer-rights-bar {
+        background-color: darken($third-footer-color,4%);
+    }
+
+    .offer_footer_data {
+        background-color: $third-footer-color;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// contact website
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.contact-main-content::after {
+    content: "";
+    background: url('../../img/contact-bg.jpg');
+    background-size: cover;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    filter: blur(2px);
+}
+
+.contact-main-content-img {
+    -webkit-box-shadow: 0px 0px 80px 30px rgb(127, 127, 127);
+    -moz-box-shadow: 0px 0px 80px 30px rgb(127, 127, 127);
+    box-shadow: 0px 0px 80px 30px rgb(127, 127, 127);
+}
+
+footer {
+    .contact-footer-info {
+        background-color: $fourth-footer-color;
+    }
+
+    .contact-footer-rights-bar {
+        background-color: darken($fourth-footer-color,4%);
+    }
+
+    .contact_footer_data {
+        background-color: $fourth-footer-color;
+    }
+}

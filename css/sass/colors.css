@@ -1,0 +1,15 @@
+header {
+  color: #312f3b;
+  background-color: #f7f7f7;
+}
+header .header-helpers p > a {
+  color: #312f3b;
+}
+
+.footer_data {
+  background-color: #f5e9ff;
+}
+
+.footer_rights_bar {
+  background-color: #deb6ff;
+}/*# sourceMappingURL=colors.css.map */

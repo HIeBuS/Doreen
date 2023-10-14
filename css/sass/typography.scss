@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+
+// text variables
+$basic-font-size: 1rem;
+$paragraph-margin: 0 0 1rem;
+
+// headers mixin
+@mixin heading_mixin($header-font-size, $header-color) {
+    font-size: $header-font-size;
+    color: $header-color;
+}
+
+@mixin button_mixin($button-font-size,$button-background-color,$button-text-color) {
+    font-size: $button-font-size;
+    background-color: $button-background-color;
+    color: $button-text-color;
+    @include size();
+    @include border();
+}
+
+// font families
+$primary-font-family: 'Open Sans', sans-serif;
+$secondary-font-family: 'Montserrat', sans-serif;
+
+body {
+    font-size: $basic-font-size;
+    font-family: $primary-font-family;
+}
+
+header {
+    font-family: $secondary-font-family;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+}

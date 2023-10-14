@@ -1,0 +1,44 @@
+// text colors
+$basic-text-color:#48487F;
+$bright-text-color: #efefef;
+$header-text-color: #312f3b;
+
+// accent color
+$primary-accent-color: #c59be2;
+$secondary-accent-color: #312f3b;
+$third-accent-color: #780241;
+
+// border
+$basic-border-color: #bababa;
+$alternate-border-color: #a3997e;
+
+//background colors
+$basic-background-color: #FFF;
+$alternate-background-color: #48487F;
+$header-color: #f7f7f7;
+
+$footer-color: #f5e9ff;
+$secondary-footer-color: #dcecfc;
+$third-footer-color: #ccebc4;
+$fourth-footer-color: #e9e9e9;
+
+// header
+header {
+    color: $header-text-color;
+    background-color: $header-color;
+    .header-helpers {
+        p > a {
+            color: $header-text-color;
+        }
+    }
+}
+
+// footer
+.footer_data {
+    background-color: $footer-color;
+}
+
+.footer_rights_bar {
+    background-color: darken($footer-color,10%);
+}
+
